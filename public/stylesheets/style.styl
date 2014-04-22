@@ -1,0 +1,183 @@
+@import 'nib'
+@import 'nib/gradients'
+
+b1 = #000
+b2 = #080808
+b3 = #111
+b4 = #222
+b5 = #333
+b6 = #444
+w1 = #fff
+w2 = #eee
+w3 = #ddd
+w4 = #bbb
+w5 = #aaa
+w6 = #888
+c1 = #222
+c2 = #0a0
+c3 = #666
+ana()
+  box-shadow -1px -1px 1px rgba(255,255,255,0.2) inset , -1px -1px 1px rgba(0,0,0,0.9)
+shadow1()
+  box-shadow 2px 2px 2px rgba(0,0,0,0.5)
+rad(r)
+  border-radius unit(r,'px')
+has2()
+  box-shadow 0 0 2px rgba(255,255,255,0.2) inset ,0px 0px 2px rgba(0,0,0,0.5)
+has1()
+  box-shadow 0 0 2px rgba(255,255,255,0.2) inset ,2px 2px 2px rgba(0,0,0,0.5)
+hilite()
+  box-shadow 0 0 2px rgba(255,255,255,0.2) inset
+hilite-top()
+  box-shadow 0 1px 1px rgba(255,255,255,0.1) inset
+hilite-bottom()
+  box-shadow 0 -1px 1px rgba(255,255,255,0.1) inset
+grad(color1 , color2)
+  linear-gradient(top, color1, color2)
+
+.clearfix
+  &:after
+    content ""
+    clear both
+    display block
+body
+  background c8
+
+
+a
+  color: #00B7FF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////フッター・ユニゲーbar・・・・・・・・・・
+footer
+  position fixed
+  bottom 0
+  left 0
+  width 100%
+  div#unigeBar
+
+    //情報bar
+    div.info-bar
+      position relative
+      z-index 1
+      hilite-top()
+      border-top 1px solid b3
+      background b4
+      padding 2px 32px
+      width auto
+      div.info-bar-inner
+        box-shadow -1px -1px 1px rgba(255,255,255,0.2) inset , -1px -1px 1px rgba(0,0,0,0.9)
+        rad(2)
+        margin 2px
+        background b2
+        height 22px
+        width auto
+        overflow hidden
+        div#infoBar
+          width 110%
+          .info-message
+            position relative
+
+
+            color w3
+            font-size 12px
+    //メインバー
+    div.main-bar
+      padding 4px
+      position relative
+      z-index 2
+      hilite-top()
+      border-top 1px solid b3
+      background b4
+      div.unige-logo
+        position absolute
+        has1()
+        rad(4)
+        background b5
+        border 1px solid b3
+        width 140px
+        height 80px
+        margin -24px 8px
+        padding 12px 0
+        text-align center
+      div.main-menu
+
+          margin 2px
+          margin-left 200px
+          height auto
+          width auto
+          div.select-category-wrap
+            display inline-block
+            width auto
+            div.select-category
+              background w3
+              height 47px
+              margin -4px
+
+          div#user-label
+            rad(2)
+            box-shadow -1px -1px 1px rgba(255,255,255,0.2) inset , -1px -1px 1px rgba(0,0,0,0.9)
+            position relative
+            background b3
+            font-size 10px
+            width 120px
+            height 40px
+            float left
+            div.icon-wrap
+              img.user-icon
+                float left
+                display inline-block
+                margin 4px 2px
+                padding 4px 2px
+                padding-right 4px
+                border-right 1px solid b5
+                width 24px
+                height 24px
+            a.user-name
+              color w1
+              display inline-block
+              margin 10px 0px
+              font-size 12px
+            div.notices
+              position absolute
+              right 4px
+              bottom 2px
+              display inline-block
+              color b6
+              width 12px
+          div.search
+            float right
+            rad(2)
+            margin 6px
+            margin-right 8px
+            padding 2px
+            position relative
+            background w3
+            width 200px
+            i
+              color w6
+              font-size 14px
+              margin 4px
+            input#search-unigame
+              width 160px
+              margin 0 4px
+              font-size 12px
+              background none
+              border none
+              &:focus
+                outline none
+              &:active
+                outline none
