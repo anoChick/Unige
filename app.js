@@ -8,6 +8,8 @@ var stylus = require('stylus');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var niv = nib = require('nib');
+var resource = require('express-resource');
+var databox = require('./lib/databox');
 var app = express();
 
 // view engine setup
@@ -25,12 +27,18 @@ function compile(str, path) {
     .set('compress', true)
     .use(nib());
 }
-//app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(stylus.middleware({ src: __dirname + '/public',compile: compile }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/games',require('./routes/games'));
 app.use('/users', users);
+
+
+
+//RESTの方
+
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -72,4 +80,3 @@ app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });
-

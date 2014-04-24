@@ -16,6 +16,23 @@ w6 = #888
 c1 = #222
 c2 = #0a0
 c3 = #666
+
+.cnt-inr
+  overflow scroll
+.cnt-inr-x
+  overflow-x scroll
+
+.cnt-inr-y
+  overflow-y scroll
+.con-wrp
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+
+
+
 ana()
   box-shadow -1px -1px 1px rgba(255,255,255,0.2) inset , -1px -1px 1px rgba(0,0,0,0.9)
 shadow1()
@@ -23,24 +40,35 @@ shadow1()
 rad(r)
   border-radius unit(r,'px')
 has2()
-  box-shadow 0 0 2px rgba(255,255,255,0.2) inset ,0px 0px 2px rgba(0,0,0,0.5)
+  box-shadow 0 0 2px rgba(255,255,255,0.2) inset ,2px 2px 2px rgba(0,0,0,0.5)
 has1()
   box-shadow 0 0 2px rgba(255,255,255,0.2) inset ,2px 2px 2px rgba(0,0,0,0.5)
 hilite()
   box-shadow 0 0 2px rgba(255,255,255,0.2) inset
 hilite-top()
-  box-shadow 0 1px 1px rgba(255,255,255,0.1) inset
+  box-shadow 0 1px 0px rgba(255,255,255,0.1) inset
 hilite-bottom()
-  box-shadow 0 -1px 1px rgba(255,255,255,0.1) inset
+  box-shadow 0 -1px 0px rgba(255,255,255,0.1) inset
 grad(color1 , color2)
   linear-gradient(top, color1, color2)
 
+
+
+
+.wc
+  margin 4px
+  background w1
+  border 1px solid w5
+  has1()
 .clearfix
   &:after
     content ""
     clear both
     display block
-body
+body,html
+  font-size 14px
+  width 100%
+  height 100%
   background c8
 
 
@@ -49,6 +77,23 @@ a
 
 
 
+
+//めいん
+
+div.main
+  overflow hidden
+
+  height 100%
+  width 100%
+  background c2
+  div.main-content-wrap
+    height 100px
+    width 100%
+    background w3
+    div.main-content
+      background w2
+      position relative
+      width 100%
 
 
 
@@ -63,12 +108,10 @@ a
 
 /////////////////フッター・ユニゲーbar・・・・・・・・・・
 footer
+  width 100%
   position fixed
   bottom 0
-  left 0
-  width 100%
   div#unigeBar
-
     //情報bar
     div.info-bar
       position relative
@@ -113,6 +156,25 @@ footer
         margin -24px 8px
         padding 12px 0
         text-align center
+        div#vertical-menu
+          border 1px solid b2
+          has2()
+          rad(2)
+          position absolute
+          z-index -1
+          background b4
+          left 10px
+          width 120px
+          top -270px
+          a.item
+            font-size 12px
+            margin 0
+            display inline-block
+            padding 8px 0
+            color w6
+            width 100%
+            hilite-bottom()
+            border-bottom 1px solid b3
       div.main-menu
 
           margin 2px
@@ -123,7 +185,8 @@ footer
             display inline-block
             width auto
             div.select-category
-              background w3
+              float right
+              background b4
               height 47px
               margin -4px
 
@@ -181,3 +244,72 @@ footer
                 outline none
               &:active
                 outline none
+
+
+
+
+
+
+//
+//
+//
+// //ゲーム
+// .game-container
+//   margin 4px
+//   position relative
+//   height 100px
+//   .title-view
+//     background b4
+//     color w1
+//     text-align center
+//     span.title
+//       font-size 32px
+//   .game-view
+//     overflow hidden
+//     #unityPlayer
+//       background b2
+//       position relative
+//       embed
+//         background c2
+//   .about-view
+//     position relative
+//   .info-view
+//     position relative
+//
+//   .others-view
+//     width 170px
+//
+//   .comments-view
+//     position relative
+//     width 170px
+//     .comments
+//       overflow-y scroll
+//
+//       .item
+//         border 1px solid w5
+//         margin 4px
+//         padding 4px
+//         .icon
+//           float left
+//           width 24px
+//           height 24px
+//           margin 4px
+//         .name
+//           float left
+//           margin 4px
+//           display inline-block
+//           font-size 14px
+//         .comment
+//           font-size 12px
+//     .comment-box
+//       margin 4px
+//       height 140px
+//       border 1px solid w5
+//
+//
+//
+//
+// .unity-game-wrap
+//   position relative
+//   background #f00
+//   margin 0 auto

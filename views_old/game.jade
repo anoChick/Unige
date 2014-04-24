@@ -1,0 +1,67 @@
+extends layout
+
+block content
+  div(class='game-container box-hor flex')
+    div(class='game-others-wrap box-ver')
+      div(class='others-view flex')
+        h4 おすすめゲーム
+
+
+    div(class='game-main-wrap box-ver flex')
+      div(class='game-title-wrap box-hor')
+        div(class='title-view wc flex')
+          span(class='title')ひよこの大冒険
+      div(class='box-hor flex')
+        div(class='box-ver flex' id='gameVertical')
+          div(class='game-view wc')
+            include view/game
+          div(class='flex box-hor')
+            div(class='flex box-ver')
+              div(class='wc flex about-view')
+                div(class='con-wrp')
+                  h4 概要
+                  div(class='about-content cnt-inr-y')
+                    p ぴよたまを穴に落とすと得点が入る。
+                      |ぴよたまは[普通,銅,銀,金]の４種類。
+                      |効果音：ザ・マッチメイカァズ
+                      |ぴよたまのモデル：すざく
+                      |ぴよたまは[普通,銅,銀,金]の４種類。
+                      |効果音：ザ・マッチメイカァズ
+                      |ぴよたまのモデル：すざく
+                      |ぴよたまは[普通,銅,銀,金]の４種類。
+                      |効果音：ザ・マッチメイカァズ
+                      |ぴよたまのモデル：すざく
+                      |ぴよたまは[普通,銅,銀,金]の４種類。
+                      |効果音：ザ・マッチメイカァズ
+                      |ぴよたまのモデル：すざく
+
+
+            div(class='flex box-ver')
+              div(class='wc flex info-view box-ver')
+                div(class='con-wrp')
+                  h4 情報
+                  div(class='info-content cnt-inr-y')
+                    p ぴよたまを穴に落とすと得点が入る。
+                      |ぴよたまは[普通,銅,銀,金]の４種類。
+                      |効果音：ザ・マッチメイカァズ
+                      |ぴよたまのモデル：すざく
+                      |ぴよたまは[普通,銅,銀,金]の４種類。
+                      |効果音：ザ・マッチメイカァズ
+
+
+
+        div(class='box-ver')
+          div(class='flex wc comments-view box-ver')
+            div(class='con-wrp')
+             h4 コメント
+
+             div(class='comments flex cnt-inr-y')
+               -for(var i=0;i<5;i++)
+                 div(class='item')
+                   img(src='http://uploads.nosub.tv/cache/65-55/animelist/mon/chibidevi.jpg' class='icon')
+
+                   div(class='name') ポチ太郎
+                   div(class='clearfix')
+                   div(class='comment') 彼女出来ません。助けてください。お腹が空きました。助けてください。ひよこは可愛いです。
+             div(class='comment-box')
+               |コメントする
