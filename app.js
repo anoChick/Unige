@@ -9,7 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var niv = nib = require('nib');
 var resource = require('express-resource');
-var databox = require('./lib/databox');
+//var databox = require('./lib/databox');
 var app = express();
 
 // view engine setup
