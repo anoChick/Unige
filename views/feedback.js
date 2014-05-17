@@ -1,0 +1,1 @@
+var mailer = require('nodemailer');

@@ -14,9 +14,14 @@ w4 = #bbb
 w5 = #aaa
 w6 = #888
 c1 = #222
-c2 = #0a0
-c3 = #666
-
+c2 = #3cc83c
+c3 = #0094ff
+c4 = #ff5030
+c5 = #ffffbd
+button
+  &:active,
+  &:focus
+    outline none
 .cnt-inr
   overflow scroll
 .cnt-inr-x
@@ -31,7 +36,14 @@ c3 = #666
   width 100%
   height 100%
 
-
+.loading
+  position absolute
+  right 0
+  margin 4px
+  i
+    color w6
+.hide
+  display none
 
 ana()
   box-shadow -1px -1px 1px rgba(255,255,255,0.2) inset , -1px -1px 1px rgba(0,0,0,0.9)
@@ -54,7 +66,10 @@ grad(color1 , color2)
 
 
 
-
+.container
+  color w1
+  // background b3
+  has2()
 .wc
   margin 4px
   background w1
@@ -70,7 +85,8 @@ body,html
   width 100%
   height 100%
   background c8
-
+  background-image url('../images/stardust.png')
+  -webkit-font-smoothing: antialiased;
 
 a
   color: #00B7FF
@@ -81,19 +97,62 @@ a
 //めいん
 
 div.main
-  overflow hidden
-
+  overflow-y scroll
+  overflow-x hidden
   height 100%
   width 100%
-  background c2
-  div.main-content-wrap
-    height 100px
+
+  .page
     width 100%
-    background w3
-    div.main-content
-      background w2
-      position relative
-      width 100%
+    height 100%
+    //サイドメニュー
+    .sub-menu
+      text-align center
+      color w5
+      position fixed
+      width 148px
+      background b3
+      height 100%
+      .side-menu
+        a.item
+          text-decoration none
+          margin 4px 0
+          text-align center
+          width 148px
+          background b4
+          display inline-block
+          padding 4px 0
+          &.active
+            background b6
+          &:hover
+            background b5
+      shadow1()
+    .main-content-wrap
+      margin-left 148px
+      background rgba(255,255,255,0.3)
+      width 960px
+      height 100%
+      has2()
+      .main-content
+        padding-top 8px
+        
+        height 500px
+        
+        
+  #loginPage
+    position relative
+    width 100%
+    height 100%
+    top -45px
+    .content
+      position absolute
+      top 50%
+      left 50%
+      margin -240px -360px
+      width 720px
+      height 480px
+      .inr
+        margin 32px
 
 
 
@@ -112,10 +171,74 @@ footer
   position fixed
   bottom 0
   div#unigeBar
+    div#statusBar
+      position absolute
+      bottom 0
+      left 0
+      z-index 99
+      width 100%
+      height 20px
+      border-top 1ps solid w6
+      box-shadow 0 -1px 0 b4
+      background w2
+      span.copyright
+        color b4
+        float right
+        display inline-block
+        margin 3px 8px
+        font-size 10px
+    div.unige-logo
+      position absolute
+      bottom 0
+      z-index 10
+      has1()
+      rad(4)
+      background b5
+      border 1px solid b3
+      width 130px
+      height 86px
+      margin -24px 4px
+      padding 8px 0
+      text-align center
+
+    //トグルビュー
+    .toggle-view
+      position relative
+      z-index 3
+      height 300px
+      background rgba(16,16,16,0.9)
+      #toggleView
+        overflow hidden
+        .tag-cloud
+          height 300px
+          a.tag
+            text-decoration none
+            display inline-block
+            font-size 16px
+            margin 4px 8px
+            background b6
+            padding 4px 8px
+            rad(2)
+            &:hover
+              background b6 + 20%
+        .categories
+          margin 0 auto
+          width 960px
+          height 300px
+          a.item
+            text-decoration none
+            has1()
+            margin 4px 15px
+            text-align center
+            display inline-block
+            font-size 22px
+            padding 17px 0
+            width 290px
+            background b2
     //情報bar
     div.info-bar
       position relative
-      z-index 1
+      z-index 2
       hilite-top()
       border-top 1px solid b3
       background b4
@@ -139,46 +262,42 @@ footer
             font-size 12px
     //メインバー
     div.main-bar
-      padding 4px
+      padding 4px 0 24px 0
       position relative
       z-index 2
       hilite-top()
       border-top 1px solid b3
       background b4
-      div.unige-logo
-        position absolute
-        has1()
-        rad(4)
-        background b5
-        border 1px solid b3
-        width 140px
-        height 80px
-        margin -24px 8px
-        padding 12px 0
-        text-align center
-        div#vertical-menu
-          border 1px solid b2
-          has2()
-          rad(2)
-          position absolute
-          z-index -1
-          background b4
-          left 10px
-          width 120px
-          top -270px
-          a.item
-            font-size 12px
-            margin 0
-            display inline-block
-            padding 8px 0
-            color w6
-            width 100%
-            hilite-bottom()
-            border-bottom 1px solid b3
-      div.main-menu
 
+      //ユーザメニュ
+      div#userMenu
+        border 1px solid b2
+        has2()
+        rad(2)
+        position absolute
+        z-index -1
+        background b4
+        left 14px
+        width 110px
+        bottom 140px
+        a.item
+          text-align center
+          text-decoration none
+          font-size 12px
+          margin 0
+          display inline-block
+          padding 6px 0
+          color w6
+          width 100%
+          hilite-bottom()
+          border-bottom 1px solid b3
+          &:hover
+            background b5
+          &.active
+            background c2
+      div.main-menu
           margin 2px
-          margin-left 200px
+          margin-left 180px
           height auto
           width auto
           div.select-category-wrap
@@ -189,38 +308,56 @@ footer
               background b4
               height 47px
               margin -4px
-
-          div#user-label
-            rad(2)
-            box-shadow -1px -1px 1px rgba(255,255,255,0.2) inset , -1px -1px 1px rgba(0,0,0,0.9)
-            position relative
-            background b3
-            font-size 10px
-            width 120px
-            height 40px
+          div.user-wrap
             float left
-            div.icon-wrap
-              img.user-icon
-                float left
+            div#userLabel
+              rad(2)
+              box-shadow -1px -1px 1px rgba(255,255,255,0.2) inset , -1px -1px 1px rgba(0,0,0,0.9)
+              position relative
+              background b3
+              font-size 10px
+              width 120px
+              height 40px
+              float left
+              div.icon-wrap
+                img.icon
+                  float left
+                  display inline-block
+                  margin 4px 2px
+                  padding 4px 2px
+                  padding-right 4px
+                  border-right 1px solid b5
+                  width 24px
+                  height 24px
+              a.handle
+                color w1
                 display inline-block
-                margin 4px 2px
-                padding 4px 2px
-                padding-right 4px
-                border-right 1px solid b5
-                width 24px
-                height 24px
-            a.user-name
+                margin 10px 0px
+                font-size 12px
+              div.notices
+                position absolute
+                right 4px
+                bottom 2px
+                display inline-block
+                color b6
+                width 12px
+            button#entryButton
+              display inline-block
+              margin 4px 8px
+              background c2
+              border 1px solid b2
               color w1
-              display inline-block
-              margin 10px 0px
+              font-weight normal
+              padding 4px
               font-size 12px
-            div.notices
-              position absolute
-              right 4px
-              bottom 2px
-              display inline-block
-              color b6
-              width 12px
+              width 48px
+              rad(4)
+              box-shadow 0 0 2px b1 ,0 0 2px b1 , 1px 1px 0px c2 +20% inset , -1px -1px 0px c2 - 20% inset
+              &:focus,
+              &:active
+                outline none
+              &:hover
+                background c2+20%
           div.search
             float right
             rad(2)
@@ -244,6 +381,27 @@ footer
                 outline none
               &:active
                 outline none
+          .seek-wrap
+            width 250px
+            float right
+
+            a.button-b
+              text-decoration none
+              box-shadow 1px 0 0 b5 , 1px 0 0 b5 inset
+              float right
+              border-left 1px solid b3
+              border-right 1px solid b3
+              padding 10px
+              font-size 14px
+              margin 0 8px -6px 0px
+              color c3
+              text-shadow -1px -1px 0px b3
+              font-weight bold
+              border-top 3px solid c3
+              &:hover
+                background b5
+              &.active
+                background b6
 
 
 
@@ -313,3 +471,144 @@ footer
 //   position relative
 //   background #f00
 //   margin 0 auto
+
+
+
+div#modalBack
+  cursor pointer
+  z-index 100
+  position absolute
+  background rgba(0,0,0,0.8)
+  width 100%
+  height 100%
+  top 0
+  left 0
+  div#modalEntry
+    text-align center
+    rad(8)
+    background w1
+    h2
+      background w2
+      color b4
+      padding 8px
+    cursor default
+    position absolute
+    top 50%
+    left 50%
+    margin -270px -240px
+    width 480px
+    height 540px
+    #entryForm
+
+      float left
+      display inline-block
+      margin 0px 16px
+      text-align left
+      .form-item
+        position relative
+        margin 22px 0
+        label
+          font-size 12px
+          margin 2px
+          display block
+          color b4
+          &.error
+            margin padding 2px
+            font-size 10px
+            z-index 1
+            position absolute
+            color w1
+            background c4
+            rad(2)
+            overflow hidden
+        input
+          width 204px
+          rad(2)
+          border 1px solid w4
+          background c5
+          display inline-block
+          &.invalid
+            border 1px solid c4
+          &:focus
+            border 1px solid c2
+            outline none
+        span.valid-info
+          display inline-block
+          color b4
+    .ver-line
+      position absolute
+      left 50%
+      background b1
+      display inline-block
+      border-left 1px solid w3
+      height 360px
+      width 0px
+    .oauth
+      padding-top 120px
+      display inline-block
+      width 240px
+      height 200px
+      .twitter-button
+        padding 0
+        box-shadow 0 1px 0 #55ACEE + 20% inset, 0 1px 1px w3
+        rad(4)
+        width 140px
+        border 1px solid #55ACEE - 20%
+        margin 16px auto
+        display block
+        color #f5f8fa
+        background #55ACEE
+        &:hover
+          background #55ACEE + 20%
+        i
+          display inline-block
+          margin 4px
+          padding 2px 4px
+          float left
+          font-size 20px
+          border-right 1px solid #55ACEE - 20%
+        span
+          display inline-block
+          font-size 12px
+          margin 7px
+
+      .google-plus-button
+        padding 0
+        box-shadow 0 1px 0 #dd4b39 + 20% inset, 0 1px 1px w3
+        rad(4)
+        width 140px
+        border 1px solid #dd4b39 - 20%
+        margin 16px auto
+        display block
+        color #fff
+        background #dd4b39
+        &:hover
+          background #dd4b39 + 20%
+        i
+          display inline-block
+          margin 4px
+          padding 2px 4px
+          float left
+          font-size 20px
+          border-right 1px solid #dd4b39 - 20%
+        span
+          display inline-block
+          font-size 12px
+          margin 7px
+    .create-button-wrap
+      display inline-block
+      margin-top 0px
+      text-align center
+      width 100%
+      .use-policy
+        width auto
+      #createUserButton
+        color w1
+        box-shadow 0 1px 0 c2 + 20% inset, 0 1px 1px w3
+        display inline-block
+        padding 4px 128px
+        background c2
+        rad(4)
+        border 1px solid c2 - 20%
+        &:hover
+          background c2 + 20%

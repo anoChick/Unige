@@ -1,0 +1,7 @@
+関数リスト
+
+
+var blob = require('blob');
+
+//ファイルアップロード
+blob.addFile(containerName,fileSrc, fileName, callback);

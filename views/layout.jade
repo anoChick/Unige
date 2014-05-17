@@ -6,12 +6,45 @@ html
     link(rel='stylesheet', href='/stylesheets/normalize.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+    script(src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js')
+    script(src="/javascripts/messages_ja.js")
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js')
     script(src="/javascripts/unige.js")
   body
     div(class='main')
       block content
 
 
-
+    div(id='modalBack' class='hide')
+      div(id='modalEntry')
+        h2 新規アカウント登録
+        form(id='entryForm' class="cmxform" method="get" action="")
+          div(class='form-item')
+            label ニックネーム
+            input(type='text' name='handle' class='handle' rangelength='2,32' required class='handle')
+          div(class='form-item')
+            label ユーザ名
+            input(type='text' class='name' name='name' id='name'  required class='name')
+          div(class='form-item')
+            label E-mail
+            input(type="email" name="email" required class='email')
+          div(class='form-item')
+            label パスワード
+            input(type='password' name='pass' rangelength='6,128' required class='pass')
+          div(class='form-item')
+            label パスワード(確認)
+            input(type='password' name='pass-conf' equalTo='#entryForm .pass' class='pass-conf' rangelength='6,128' required)
+        div(class='ver-line')
+        div(class='oauth')
+          |未実装
+          button(class='twitter-button')
+            i(class="fa fa-twitter fa-fw fa-2x")
+            span Twitter
+          button(class='google-plus-button')
+            i(class="fa fa-google-plus-square fa-fw fa-2x")
+            span Google
+        div(class='create-button-wrap')
+          p(class='use-policy') 利用規約を読むべし.
+          button(id='createUserButton') アカウント作成
     footer
       include unigebar
